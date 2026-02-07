@@ -1,0 +1,43 @@
+name: Update formula
+
+on:
+  workflow_dispatch:
+    inputs:
+      formula:
+        description: "Formula to update"
+        required: true
+        type: choice
+        options:
+          - gqlt
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v6
+
+      - name: Set formula params
+        id: params
+        run: |
+          FORMULA="${{ github.event.inputs.formula }}"
+          case "$FORMULA" in
+            gqlt) echo "repo=digiz3d/graphql-toolkit" >> $GITHUB_OUTPUT ;;
+            *) echo "::error::No repo configured for formula: $FORMULA. Add a case in 'Set formula params'." ; exit 1 ;;
+          esac
+          echo "formula_id=$FORMULA" >> $GITHUB_OUTPUT
+
+      - name: Update formula
+        run: node .github/scripts/update-formula.js ${{ steps.params.outputs.formula_id }} ${{ steps.params.outputs.repo }}
+
+      - uses: peter-evans/create-pull-request@v8
+        with:
+          branch: chore/update-formula-${{ steps.params.outputs.formula_id }}
+          add-paths: Formula/${{ steps.params.outputs.formula_id }}.rb
+          commit-message: "chore(${{ steps.params.outputs.formula_id }}): update formula to latest release"
+          title: "chore(${{ steps.params.outputs.formula_id }}): update formula to latest release"
+          body: "Updates the ${{ steps.params.outputs.formula_id }} Homebrew formula to the latest release from the upstream repo. Please review and merge."
