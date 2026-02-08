@@ -1,27 +1,27 @@
 class Gqlt < Formula
   desc "Simple GraphQL toolkit ! ❤"
   homepage "https://github.com/digiz3d/graphql-toolkit"
-  version "1.0.3"  # gqlt:version
+  version "1.1.0"  # gqlt:version
 
   on_linux do
     on_arm do
-      url "https://github.com/digiz3d/graphql-toolkit/releases/download/v1.0.3/aarch64-linux-gqlt"  # gqlt:url-aarch64-linux
-      sha256 "c4bf714f3aeb640470e8dee0dd566c858bc26ee706c6b523b40e90bcef52c947"  # gqlt:sha-aarch64-linux
+      url "https://github.com/digiz3d/graphql-toolkit/releases/download/v1.1.0/aarch64-linux-gqlt"  # gqlt:url-aarch64-linux
+      sha256 "dcbb11deef1c1d5dbe8abc62651cedd217913653034e2b57339edbc737210388"  # gqlt:sha-aarch64-linux
     end
     on_intel do
-      url "https://github.com/digiz3d/graphql-toolkit/releases/download/v1.0.3/x86_64-linux-gqlt"  # gqlt:url-x86_64-linux
-      sha256 "4062aff93dac5c43049d94393499e4ef7131167d3279c8ad56db5b8142b748d5"  # gqlt:sha-x86_64-linux
+      url "https://github.com/digiz3d/graphql-toolkit/releases/download/v1.1.0/x86_64-linux-gqlt"  # gqlt:url-x86_64-linux
+      sha256 "87a572c2b3a6b8a251a86bbd6d9a03b5ba99fcab357cfe9f96eda19ce228c922"  # gqlt:sha-x86_64-linux
     end
   end
 
   on_macos do
     on_arm do
-      url "https://github.com/digiz3d/graphql-toolkit/releases/download/v1.0.3/aarch64-macos-gqlt"  # gqlt:url-aarch64-macos
-      sha256 "6fb3d1c4c597e3d76a12d5c3b3577bd0722040eeb9469a91944fb91e4dbbafca"  # gqlt:sha-aarch64-macos
+      url "https://github.com/digiz3d/graphql-toolkit/releases/download/v1.1.0/aarch64-macos-gqlt"  # gqlt:url-aarch64-macos
+      sha256 "762cc918d9d055d8b0bf2aa6d55523a7bff9d0e435400d446b8cdef57e7a73d7"  # gqlt:sha-aarch64-macos
     end
     on_intel do
-      url "https://github.com/digiz3d/graphql-toolkit/releases/download/v1.0.3/x86_64-macos-gqlt"  # gqlt:url-x86_64-macos
-      sha256 "0ea0c456e0e670db59217edcf89439ede4bba783453a81c16614c56c81909b1f"  # gqlt:sha-x86_64-macos
+      url "https://github.com/digiz3d/graphql-toolkit/releases/download/v1.1.0/x86_64-macos-gqlt"  # gqlt:url-x86_64-macos
+      sha256 "a6b6076df40599aa9bc0c35b244a625053eb4510611e22c12d43038beaeb0beb"  # gqlt:sha-x86_64-macos
     end
   end
 
